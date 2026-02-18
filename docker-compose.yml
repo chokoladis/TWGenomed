@@ -1,0 +1,41 @@
+services:
+
+  nginx:
+    build:
+      dockerfile: ./dockerfiles/nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./dockerfiles/nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./dockerfiles/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./basic:/var/www/twgenomed
+    container_name: tw_nginx
+
+  php:
+    build:
+      context: .
+      dockerfile: dockerfiles/php/Dockerfile
+    volumes:
+      - ./dockerfiles/php/conf/fpm.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ./basic:/var/www/twgenomed
+    container_name: tw_php
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 1G
+
+  mysql:
+    image: mysql:8.0
+    container_name: tw_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
