@@ -2,9 +2,24 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+$this->title = 'Short link generator';
+
+$form = \yii\widgets\ActiveForm::begin([
+        'id' => 'form-generate-link',
+        'action' => '/link/generate',
+        'method' => 'post',
+        'options' => [
+            'class' => 'form-inline',
+            'enctype' => 'multipart/form-data'
+        ],
+]);
 ?>
-<form action="">
-    <input type="text" class="form-control" id="url">
-    <button type="button" class="btn btn-primary">Отправить</button>
-</form>
+
+    <div class="d-flex">
+        <input type="text" name="url" id="url" class="form-control"/>
+        <button type="submit" class="btn btn-primary">OK</button>
+    </div>
+
+<?php
+    \yii\widgets\ActiveForm::end();
+?>
