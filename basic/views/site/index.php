@@ -23,3 +23,9 @@ $form = \yii\widgets\ActiveForm::begin([
 <?php
     \yii\widgets\ActiveForm::end();
 ?>
+
+<div class="ajax-result">
+    <img src="" alt="qr-code">
+    <h4 class="link"></h4>
+</div>
+<div class="alert alert-danger"></div>

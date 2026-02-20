@@ -50,19 +50,20 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'link/generate' => 'link/generate',
+                '<short_link:[a-zA-Z0-9]+>' => 'link/redirect',
             ],
         ],
     ],
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (YII_ENV_DEV || YII_DEBUG) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['*'],
     ];
 
     $config['bootstrap'][] = 'gii';

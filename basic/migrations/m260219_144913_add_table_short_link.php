@@ -11,10 +11,12 @@ class m260219_144913_add_table_short_link extends Migration
     {
         $this->createTable('short_links', [
             'id' => $this->primaryKey(),
-            'link' => $this->string()->notNull()->unique(),
+            'url' => $this->string()->notNull()->unique(),
             'short_link' => $this->string(30)->notNull()->unique(),
             'qr_code_path' => $this->string()->notNull()->unique(),
         ]);
+
+        $this->createIndex('idx_unique_short_link', 'short_links', 'short_link', true);
     }
 
     /**

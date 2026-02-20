@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/basic" isTestSource="false" packagePrefix="app" />
       <sourceFolder url="file://$MODULE_DIR$/basic" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/basic/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/basic/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/bower-asset/inputmask" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/bower-asset/jquery" />
@@ -21,8 +22,10 @@
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/codeception/stub" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/codeception/verify" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/basic/vendor/dasprid/enum" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/basic/vendor/endroid/qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/basic/vendor/graham-campbell/result-type" />

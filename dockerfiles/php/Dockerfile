@@ -14,6 +14,9 @@ RUN set -eux; \
             oniguruma-dev \
             icu-dev \
             libxml2-dev \
+            libpng-dev \
+            libjpeg-turbo-dev \
+            freetype-dev \
             curl-dev
 
 RUN apk add bash \
@@ -21,6 +24,9 @@ RUN apk add bash \
         zlib \
         icu-libs \
         libxml2 \
+        libpng \
+        libjpeg-turbo \
+        freetype \
         curl; \
     docker-php-ext-install \
         pdo \
@@ -28,6 +34,7 @@ RUN apk add bash \
         mbstring \
         bcmath \
         intl \
+        gd \
         sockets \
         pcntl \
         curl; \

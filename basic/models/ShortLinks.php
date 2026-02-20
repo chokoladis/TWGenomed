@@ -13,7 +13,7 @@ class ShortLinks extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'short_link';
+        return 'short_links';
     }
 
     /**
@@ -26,6 +26,8 @@ class ShortLinks extends ActiveRecord
             [['url'], 'url', 'defaultScheme' => 'https', 'message' => 'Поле имеет не валидную схему ссылки'],
             [['url'], 'url', 'validSchemes' => ['http', 'https'], 'message' => 'Поле имеет не валидную схему ссылки'],
             [['url'], LinkAvailableValidator::class ],
+            [['short_link'], 'unique'],
+            [['qr_code_path'], 'unique'],
         ];
     }
 }

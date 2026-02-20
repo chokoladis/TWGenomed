@@ -47,4 +47,16 @@ class LinkController extends Controller
         return $this->asJson(['result' => $link])->setStatusCode(201);
     }
 
+    public function actionRedirect(string $short_link)
+    {
+        $service = new ShortLinkService();
+        $link = $service->getFullLink($short_link);
+
+        if (!$link) {
+            return $this->response->setStatusCode(404);
+        }
+
+        return $this->redirect($link);
+    }
+
 }

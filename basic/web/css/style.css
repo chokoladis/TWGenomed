@@ -1,0 +1,35 @@
+main > .container {
+    padding: 70px 15px 20px;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+
+.alert, .ajax-result {
+    display: none;
+}
+
+.ajax-result {
+    margin-top: 20px;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+}
+.ajax-result img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.ajax-result .link {
+    margin-top: 10px;
+}
+
+.alert {
+    margin-top: 20px;
+}
+.alert.show {
+    display: block;
+}
